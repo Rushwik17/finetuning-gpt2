@@ -116,7 +116,7 @@ custom_model = GPT2ForSequenceClassification.from_pretrained(model_path)
 quant_model, _ = quantize_model(custom_model)
 quant_model.to(device)
 quant_model.config.pad_token_id = tokenizer.eos_token_id
-results.append(evaluate_model(quant_model, "INT8 - Custom Scratch"))
+results.append(evaluate_model(quant_model, "INT8 - Custom"))
 
 
 df = pd.DataFrame(results)
